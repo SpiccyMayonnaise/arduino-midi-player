@@ -1,5 +1,5 @@
 {
-    "port": "COM3",
+    "port": "COM5",
     "board": "arduino:avr:uno",
-    "sketch": "first_steps.ino"
+    "sketch": "midi_player.ino"
 }
