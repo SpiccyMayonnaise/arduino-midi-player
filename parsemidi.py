@@ -3,7 +3,7 @@ from mido import MidiFile
 from mido import MidiTrack
 from mido import Message
 
-mid = MidiFile("elecman.mid")
+mid = MidiFile("airman.mid")
 
 with open("output.txt", "w") as f:
     for i, track in enumerate(mid.tracks):
