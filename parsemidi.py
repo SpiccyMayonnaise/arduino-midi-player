@@ -3,7 +3,7 @@ from mido import MidiFile
 from mido import MidiTrack
 from mido import Message
 
-mid = MidiFile("kirby-sand-canyon.mid")
+mid = MidiFile("airman.mid")
 
 with open("output.txt", "w") as f:
     for i, track in enumerate(mid.tracks):
@@ -12,6 +12,9 @@ with open("output.txt", "w") as f:
         newTrack = MidiTrack()
 
         output = []
+        
+        # First two bytes should indicate ticks per beat
+        output.append(bin(mid.ticks_per_beat))
 
         for msg in track:
             if not msg.is_meta:
@@ -31,9 +34,9 @@ with open("output.txt", "w") as f:
                     output.append(bin((time << 8) | 0b00000000))
 
                 
-                
-        f.write("//Track {} : {}\n".format(i, track.name))
-        f.write("static const uint16_t Track{}[] PROGMEM {{".format(i) + ", ".join(output) + "};\n")
+        if (len(output) > 1):
+            f.write("//Track {} : {}\n".format(i, track.name))
+            f.write("static const uint16_t Track{}[] PROGMEM {{".format(i) + ", ".join(output) + "};\n")
 
 
 

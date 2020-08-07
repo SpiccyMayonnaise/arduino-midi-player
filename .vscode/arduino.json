@@ -1,5 +1,5 @@
 {
-    "port": "COM6",
+    "port": "COM4",
     "board": "arduino:avr:mega",
     "sketch": "midi_player.ino",
     "configuration": "cpu=atmega2560"
