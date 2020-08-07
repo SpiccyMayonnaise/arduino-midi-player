@@ -57,7 +57,7 @@ volatile int32_t timer2_toggle_count;
 volatile uint8_t *timer2_pin_port;
 volatile uint8_t timer2_pin_mask;
 
-#if defined(__AVR_ATmega1280__)
+#if defined(__AVR_ATmega2560__)
 volatile int32_t timer3_toggle_count;
 volatile uint8_t *timer3_pin_port;
 volatile uint8_t timer3_pin_mask;
@@ -70,7 +70,7 @@ volatile uint8_t timer5_pin_mask;
 #endif
 
 
-#if defined(__AVR_ATmega1280__)
+#if defined(__AVR_ATmega2560__)
 
 #define AVAILABLE_TONE_PINS 6
 
@@ -144,7 +144,7 @@ void Tone::begin(uint8_t tonePin)
         timer2_pin_mask = digitalPinToBitMask(_pin);
         break;
 
-#if defined(__AVR_ATmega1280__)
+#if defined(__AVR_ATmega2560__)
       case 3:
         // 16 bit timer
         TCCR3A = 0;
