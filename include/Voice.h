@@ -38,6 +38,8 @@ class Voice {
 
         tone.begin(pin);
 
+        Serial.println(pin);
+
         this->trackStart = trackStart;
         this->trackLength = trackLength;
         this->useArpeggio = useArpeggio;
@@ -98,10 +100,6 @@ class Voice {
             } else {
               tone.play(NoteToFrequency(notes[numNotes - 1]));
             }
-          }
-
-          if (pin == 8) {
-            Serial.println((uint16_t)currentNote);
           }
         } else {
           // Song ended

@@ -3,7 +3,9 @@ from mido import MidiFile
 from mido import MidiTrack
 from mido import Message
 
-mid = MidiFile("airman.mid")
+path = str(input("Enter path of MIDI file:"))
+
+mid = MidiFile(path)
 
 with open("output.txt", "w") as f:
     for i, track in enumerate(mid.tracks):
@@ -35,6 +37,7 @@ with open("output.txt", "w") as f:
 
                 
         if (len(output) > 1):
+            f.write("#define TRACK{} Track{}\n".format(i, i))
             f.write("//Track {} : {}\n".format(i, track.name))
             f.write("static const uint16_t Track{}[] PROGMEM {{".format(i) + ", ".join(output) + "};\n")
 
