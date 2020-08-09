@@ -1,4 +1,4 @@
-//    2020 Valen Kostich  |  valen.kostic@gmail.com
+//    2020 Valen Kostich  |  valen.kostic@gmail.com | kostiv21@smc.sa.edu.au
 //  
 //    A MIDI player arduino sketch.
 //
