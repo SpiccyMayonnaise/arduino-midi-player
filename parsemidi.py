@@ -9,6 +9,7 @@ mid = MidiFile(path)
 
 with open("output.txt", "w") as f:
     f.write("// Copy the contents of this file into \"midi_player.ino\"\n")
+    f.write("// Midi File: {}\n".format(path))
     for i, track in enumerate(mid.tracks):
         
         newMid = MidiFile()
